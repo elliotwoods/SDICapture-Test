@@ -1,0 +1,100 @@
+
+[SourceDisksNames]
+1=%DiskId%
+
+[SourceDisksFiles]
+dvswin32_lucy.sys=1
+dvswin64_lucy.sys=1
+default_lucy.ref=1
+
+[DestinationDirs]
+DefaultDestDir=12,DVS\lucy
+
+[Manufacturer]
+%Mfg%=DVS_DIGITAL_VIDEO_SYSTEMS,NTx86,NTamd64
+
+
+;;;     ;;;
+;;;NTx86;;;
+;;;     ;;;
+
+[DVS_DIGITAL_VIDEO_SYSTEMS.NTx86]
+"Centaurus"       = DVSLUCY_NTx86, PCI\VEN_10EE&DEV_D153&SUBSYS_00000000
+"Centaurus"       = DVSLUCY_NTx86, PCI\VEN_10EE&DEV_D153&SUBSYS_D15310EE
+"Centaurus"       = DVSLUCY_NTx86, PCI\VEN_1A55&DEV_0020&SUBSYS_00201A55
+"Centaurus II"    = DVSLUCY_NTx86, PCI\VEN_1A55&DEV_0021&SUBSYS_00211A55
+"Centaurus II LT" = DVSLUCY_NTx86, PCI\VEN_1A55&DEV_0022&SUBSYS_00221A55
+
+[DVSLUCY_NTx86]
+CopyFiles = @dvswin32_lucy.sys
+CopyFiles = @default_lucy.ref
+AddReg    = DVS_DIGITAL_VIDEO_SYSTEMS_lucy.AddReg
+
+[DVSLUCY_NTx86.Services]
+AddService = dvslucy,%SPSVCINST_ASSOCSERVICE%,DVSLUCY_Service_Inst_NTx86
+
+[DVSLUCY_Service_Inst_NTx86]
+DisplayName    = "DVS Centaurus Card Driver"
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_MANUAL_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\DVS\lucy\dvswin32_lucy.sys
+
+
+;;;       ;;;
+;;;NTamd64;;;
+;;;       ;;;
+
+[DVS_DIGITAL_VIDEO_SYSTEMS.NTamd64]
+"Centaurus"       = DVSLUCY_NTamd64, PCI\VEN_10EE&DEV_D153&SUBSYS_00000000
+"Centaurus"       = DVSLUCY_NTamd64, PCI\VEN_10EE&DEV_D153&SUBSYS_D15310EE
+"Centaurus"       = DVSLUCY_NTamd64, PCI\VEN_1A55&DEV_0020&SUBSYS_00201A55
+"Centaurus II"    = DVSLUCY_NTamd64, PCI\VEN_1A55&DEV_0021&SUBSYS_00211A55
+"Centaurus II LT" = DVSLUCY_NTamd64, PCI\VEN_1A55&DEV_0022&SUBSYS_00221A55
+
+[DVSLUCY_NTamd64]
+CopyFiles = @dvswin64_lucy.sys
+CopyFiles = @default_lucy.ref
+AddReg    = DVS_DIGITAL_VIDEO_SYSTEMS_lucy.AddReg
+
+[DVSLUCY_NTamd64.Services]
+AddService = dvslucy,%SPSVCINST_ASSOCSERVICE%,DVSLUCY_Service_Inst_NTamd64
+
+[DVSLUCY_Service_Inst_NTamd64]
+DisplayName    = "DVS Centaurus Card Driver"
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_MANUAL_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\DVS\lucy\dvswin64_lucy.sys
+
+[DVS_DIGITAL_VIDEO_SYSTEMS_lucy.AddReg]
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,DriverDirectory,0x00000000,%12%\DVS\lucy
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,DriverEXE,0x00000000,%12%\DVS\lucy
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,Compatible,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,DMAPageShift,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,Loading,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,NoAIV,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,NoANC,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,NoDecAdjust,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,NoLatAdjust,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,NoPCILatAdjust,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,PCIMapAll,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,PCIWidth,0x00010003,0
+HKLM,SYSTEM\CurrentControlSet\Services\dvslucy\Parameters\Driver,Relay,0x00010003,0
+
+[Strings]
+Mfg = "DVS Digital Video Systems GmbH"
+DiskId = "Install disk (1)"
+ClassName = "DVS Centaurus Driver"
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_MANUAL_START   = 3
+SERVICE_ERROR_NORMAL   = 1
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Media
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%Mfg%
+CatalogFile=centaurus.cat
+DriverVer=05/03/2012,4.2.1.1

@@ -1,0 +1,139 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PREVIEW DIALOGEX 0, 0, 303, 154
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Preview"
+MENU IDR_PREVIEW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider2",IDC_SLIDERH,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,93,138,127,15
+    CONTROL         "Slider3",IDC_SLIDERV,"msctls_trackbar32",TBS_VERT | TBS_TOP | TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,284,19,18,107
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_PREVIEW MENUEX 
+BEGIN
+    POPUP "File",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Pause",                       ID_PAUSE,MFT_STRING,MFS_ENABLED
+        MENUITEM "Status",                      ID_STATUS,MFT_STRING,MFS_ENABLED
+        MENUITEM "Poll NoCarrier",              ID_FILE_POLLNOCARRIER,MFT_STRING,MFS_ENABLED
+        MENUITEM "Exit",                        ID_EXIT,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    END
+    POPUP "Zoom",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "1X",                          ID_ZOOM_1X,MFT_STRING,MFS_ENABLED
+        MENUITEM "2X",                          ID_ZOOM_2X,MFT_STRING,MFS_ENABLED
+        MENUITEM "4X",                          ID_ZOOM_4X,MFT_STRING,MFS_ENABLED
+        MENUITEM "8X",                          ID_ZOOM_8X,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Scale",                          65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "1:1",                         ID_SCALE1,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:2",                         ID_SCALE2,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:4",                         ID_SCALE4,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:8",                         ID_SCALE8,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Fields",                         65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Frame",                       ID_FIELDS_FRAME,MFT_STRING,MFS_ENABLED
+        MENUITEM "Field1",                      ID_FIELDS_FIELD1,MFT_STRING,MFS_ENABLED
+        MENUITEM "Field2",                      ID_FIELDS_FIELD2,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Options",                        65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "ViewAlpha",                   ID_OPTIONS_VIEWALPHA,MFT_STRING,MFS_ENABLED
+        MENUITEM "ViewANC",                     ID_OPTIONS_VIEWANC,MFT_STRING,MFS_ENABLED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 302
+        BOTTOMMARGIN, 153
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

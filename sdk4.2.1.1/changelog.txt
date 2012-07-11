@@ -1,0 +1,329 @@
+Notes about version 4.2.1.1
+---------------------------
+- Added SMPTE352 ANC on link B for Atomix LT.
+  (requires firmware 5.4.0.8_5.2.5 or newer)
+
+
+Notes about version 4.2.1.0
+---------------------------
+- Added SV_DIRECT_FLAG_DONTBLOCK for sv_direct_sync().
+- Fixed buffersize handling in field-based mode in Direct API.
+- Fixed green frames problem on output for Atomix card family.
+- Fixed driver compilation for Linux kernels 3.2 and 3.3.
+- Fixed dvsoem dynamic library path on Mac OS X.
+- Improved SMPTE352 ANC handling especially for 2nd link.
+- Improved interrupt handling on Centaurus II.
+
+
+Notes about version 4.2.0.4 (Patch-Release)
+---------------------------
+- Added first version of GPU_P2P example.
+- Added extended ANC support for Direct API.
+- Added P2P transfer support for Direct API (Record) (AMD).
+- Fixed decode of EDID data for Atomix HDMI.
+- Fixed reset of syncstate when setting raster or sync mode.
+- Fixed wrong colors on HDMI output ports B, C and D in rasters with pixel clocks from 148,5 to 162 MHz.
+- Improved PinnedUnpackBuffer example.
+
+
+Notes about version 4.2.0.3
+---------------------------
+- internal version
+
+
+Notes about version 4.2.0.2 (Release)
+---------------------------
+- Fixed external synchronization for rasters FILM2K_2048x1080/25sF and FILM2K_2048x1080/25P (Atomix).
+- Enabled 3D support for the Atomix HDMI over the HDMI1.4a port.
+- Improved deep color operation for Atomix HDMI.
+
+
+Notes about version 4.2.0.1
+---------------------------
+- Added frame-repeat on drops in Direct API.
+- Added basic CUDA support for Direct API.
+- Added basic Direct3D 9 support for Direct API.
+- Added basic Linux OpenGL support for Direct API (NVIDIA).
+- Fixed coding of HDMI AVI-InfoFrame data (Atomix HDMI).
+- Fixed dependency of the second input channel running a PHDTV raster in 3G iospeed.
+- Fixed size check in field-based mode in Direct API.
+- Improved SV_QUERY_SMPTE352 to receive SMPTE352 information for second link in dual-link operation.
+- Improved thread synchronization in directloop and fifo examples.
+
+
+Notes about version 4.2.0.0
+---------------------------
+- Added support for SV_ANCCOMPLETE_STREAMER on Atomix LT.
+  (Requires special firmware 10.4.0.1_5.2.4 or newer.
+   These firmwares are not capable of PHDTV rasters and
+   do not have a processing pipeline.)
+- Added dvsoem as shared library on Linux.
+- Added dvsoem as dynamic library on Mac OS X.
+
+
+Notes about version 4.1.1.1
+---------------------------
+- Added Direct API native operation mode also on Linux and Mac OS X.
+- Added directloop example demonstrating Direct API native operation mode.
+- Fixed raster initialization for PHDTV on Atomix LT.
+- Fixed driver compilation for Linux kernels 3.0 and 3.1.
+
+
+Notes about version 4.1.1.0
+---------------------------
+- Added first implementation of Direct API.
+- Added PHDTV raster support in 3G iospeed on Atomix LT.
+  (requires firmware 5.4.0.1_5.2.3 or newer)
+- Fixed 4K raster on Atomix HDMI (SV_MODE_HDMI_<xxx>).
+- Fixed muting of AES/AIV live output while recording with no inputs connected (Centaurus card family).
+
+
+Notes about version 4.0.2.17
+----------------------------
+- Fixed raster SV_MODE_NTSCFF on Centaurus II.
+
+
+Notes about version 4.0.2.16
+----------------------------
+- Added Atomix HDMI support for 4K rasters.
+  (requires firmware 7.4.0.0_7.0.8 or newer)
+
+
+Notes about version 4.0.2.15
+----------------------------
+- Fixed bypass of user matrix set by sv_matrix() if storage mode and iomode have the same 
+  color space and SV_MATRIX_FLAG_FORCEMATRIX is not applied (Atomix card family).
+- Forced HDMI outputs B/C/D on Atomix HDMI to non-deepcolor mode (8 bit) until this is
+  correctly implemented in firmware.
+
+
+Notes about version 4.0.2.14
+----------------------------
+- Added support for SV_OPTION_ANCUSER_<xxx> on the second iochannel (Atomix card family).
+
+
+Notes about version 4.0.2.13
+----------------------------
+- Added sv_render_push_wipe() to support the mixer of the Atomix LT.
+  (requires firmware 5.4.0.0_5.2.3 or newer)
+- Added support for wipes to the dpxrender example.
+- Fixed loading of driver on older Atomix LT firmwares (e.g. 5.3.4.12_5.0.2).
+- Improved FIFO pre-buffering causing SV_ERROR_FIFO_STOPPED while buffer is still on output.
+  Calling sv_black(), sv_stop() or sv_videomode() now properly resets this protection mechanism.
+- Improved coding of DVITC timecode in PHDTV rasters.
+
+
+Notes about version 4.0.2.12
+----------------------------
+- Added Atomix HDMI support.
+  (requires firmware 7.3.0.9_7.0.8 or newer)
+- Fixed location of ANC packets in 2nd field for HDTV rasters.
+
+
+Notes about version 4.0.2.11
+----------------------------
+- Added new raster SV_MODE_QUADDVI_3840x2160_47P.
+- Added low latency feature for stereo_player example.
+- Fixed scrambled output when disabling SV_FIFO_LUT_TYPE_1D_RGBA (Atomix card family).
+- Fixed SV_DROPMODE_BLACK (Atomix card family).
+- Fixed possible audio drops in SV_FIFO_FLAG_VIDEOONLY operation.
+- Fixed swapped storage mode SV_MODE_NBIT_12BDPX and SV_MODE_NBIT_12BDPXLE (Atomix card family).
+- Fixed sv_matrixex() for multichannel usage.
+- Fixed sv_fifo_matrix() (Centaurus card family).
+- Fixed sv_matrix() flag SV_MATRIX_FLAG_FORCEMATRIX behavior (Atomix card family).
+- Fixed recording of PHDTV rasters even with mismatching video payload identifier (Atomix card family).
+- Improved input detection of PHDTV rasters (Atomix card family).
+
+
+Notes about version 4.0.2.10
+----------------------------
+- Fixed chrominance artefacts in sharp luminance transitions (Atomix card family).
+
+
+Notes about version 4.0.2.9
+---------------------------
+- Added SV_OPTION_AUDIONOFADING.
+- Added stereo_player as SDK example program.
+- Added support for SV_MODE_PAL608 on Atomix and Atomix LT.
+- Fixed dpxrender example under Linux and Mac OS X.
+- Fixed matrix inaccuracy for SDI output (Atomix card family).
+
+
+Notes about version 4.0.2.8
+---------------------------
+- Fixed initialization of PHDTV rasters for 3G iospeed.
+- Fixed driver compilation for Linux kernel 2.6.37 and newer.
+
+
+Notes about version 4.0.2.7
+---------------------------
+- Fixed possible FIFO overrun in the FIFO API causing damaged still image after restarting the FIFO.
+
+
+Notes about version 4.0.2.6
+---------------------------
+- Fixed license depending default DRAM layout configuration (for Atomix card family).
+
+
+Notes about version 4.0.2.5
+---------------------------
+- Added extended ANC handling for Atomix (SV_ANCCOMPLETE_ON).
+- Added rasters PAL608, PALFF and NTSCFF to default raster list (for Atomix card family).
+- Added new function sv_render_realloc().
+
+
+Notes about version 4.0.2.4
+---------------------------
+- Added SV_AUDIOAESROUTING_8_0 and SV_AUDIOAESROUTING_0_8 (Atomix LT 4 BNC).
+- Added support for SV_OPTION_HWWATCHDOG_* on Atomix LT.
+  (requires firmware 5.3.4.21_5.2.2 or newer)
+- Fixed default pinout of RS422 port C (Atomix BoB SDI).
+- Fixed "dvsconf install" problem on Windows.
+- Fixed PHDTV on 2nd iochannel.
+- Fixed possible address overrun in DMA transfer on Mac OS X.
+
+
+Notes about version 4.0.2.3
+---------------------------
+- Added support for RS422 port C/D on Atomix BoB SDI.
+  (requires firmware 6.3.0.5_6.0.1 or newer)
+
+
+Notes about version 4.0.2.2
+---------------------------
+- Added support for Atomix BoB SDI.
+  (requires firmware 6.3.0.5_4.0.13 or newer)
+- Added support for SV_DVI_OUTPUT_DVI12 for Atomix.
+  (requires firmware 4.3.0.18_3.0.10)
+- Fixed interference when setting videomode on both iochannels at the same time.
+- Fixed building of SDK examples for Linux.
+- Fixed handling of partial VTR raw command replies.
+
+
+Notes about version 4.0.2.1
+---------------------------
+- Fixed driver load problems on Linux (Centaurus II/Centaurus II LT).
+- Fixed driver load problems on Mac OS X (Atomix LT).
+- Fixed PHDTV problems on second channel (Atomix LT).
+- Fixed raster detection for 2nd link (e.g. SMPTE274/60P) (Atomix/Atomix LT).
+- Fixed wrong output on 2nd link when switching multichannel OFF (Atomix/Atomix LT).
+
+
+Notes about version 4.0.2.0
+---------------------------
+- Fixed cross-sync for SV_SYNC_EXTERNAL.
+- Updated software reference guide documentation files.
+
+
+Notes about version 4.0.1.15 (Release)
+----------------------------
+- Added PHDTV on Atomix LT.
+- Fixed PHDTV rasters on DVI output when setting SV_MAINOUTPUT_DVI.
+- Fixed initialization of SV_MODE_QUADDVI_* rasters when not explicitly setting iomode to RGB.
+- Fixed input detection for HSDL rasters on Atomix.
+
+
+Notes about version 4.0.1.14
+----------------------------
+- Added separate raster list file (default_lucy.ref) for Centaurus II/Centaurus II LT.
+
+
+Notes about version 4.0.1.13
+----------------------------
+- Fixed field-based output (introduced in 4.0.1.0) for Atomix/Atomix LT.
+- Fixed in-to-out delay instability.
+
+
+Notes about version 4.0.1.12
+----------------------------
+- Added 'dpxrender' example project to demonstrate the usage of the DVS Render API.
+- Fixed oversaturated colors for color space conversion.
+- Fixed pushing of 1D LUT and matrix settings in Render API for Atomix LT.
+- Fixed sv_live().
+- Fixed sv_colorbar() which was not working in version 4.0.1.11.
+
+
+Notes about version 4.0.1.11
+----------------------------
+- Added SMPTE274 dual SDI on Atomix.
+  (requires firmware 4.3.0.15_3.0.10 or newer for SDI-out via onboard MCX connectors)
+- Fixed render pipeline on Atomix LT.
+  (requires firmware 5.3.4.12_5.0.2 or newer)
+- Fixed potential crash while initializing videomodes for multiple jacks in parallel.
+- Fixed record directly after raster initialization.
+- Fixed 2nd iochannel influence on SDTV duallink SDI signal stability.
+- Fixed initialization of quad-rasters via sv_jack_option_set(SV_OPTION_VIDEOMODE).
+- Fixed RS422 pinout handling.
+
+
+Notes about versions 4.0.1.8 - 4.0.1.10
+---------------------------------------
+- Internal versions.
+
+
+Notes about version 4.0.1.7
+---------------------------
+- Fixed Centaurus II audio data error which was introduced in 4.0.1.0.
+- Improved audio drift adjustment to handle bigger delays (SV_OPTION_AUDIODRIFT_ADJUST).
+
+
+Notes about version 4.0.1.6
+---------------------------
+- Added 1D LUT in output pipeline on Atomix LT.
+  (requires firmware 5.3.4.10_5.0.0 or newer)
+
+
+Notes about version 4.0.1.5
+---------------------------
+- Fixed crosslink between capturing on input and video mode setting on output.
+
+
+Notes about version 4.0.1.4
+---------------------------
+- Internal version.
+
+
+Notes about version 4.0.1.3
+---------------------------
+- First beta SDK with Atomix LT support.
+
+
+Notes about versions 4.0.1.0 - 4.0.1.2
+--------------------------------------
+- Internal versions.
+
+
+Notes about version 4.0.0.4
+---------------------------
+- Added 1D LUT in output pipeline on Atomix.
+  (requires firmware 3.3.0.22_3.0.10 or newer for SDI-out via DIGOUT module)
+  (requires firmware 4.3.0.13_3.0.10 or newer for SDI-out via onboard MCX connectors)
+- Added general audio input handling with unsynchronized audio (SV_OPTION_AUDIODRIFT_ADJUST).
+- Added SV_SWITCH_TOLERANCE_DETECT_CYCLES which allows to adjust detection tolerance
+  for input source switching.
+- Added SV_MODE_NBIT_10BRALEV2, SV_MODE_NBIT_10BLABEV2, SV_MODE_NBIT_10BLALEV2 and SV_MODE_NBIT_10BRABEV2.
+
+
+Notes about version 4.0.0.3 (Release patch 2)
+---------------------------
+- Fixed sync instability after reference signal loss.
+
+
+Notes about version 4.0.0.2 (Release patch 1)
+---------------------------
+- Fixed quad-raster output of top-right and bottom-right quadrant.
+
+
+Notes about version 4.0.0.1 (Release)
+---------------------------
+- First release SDK for Atomix.
+  (requires firmware 3.3.0.5_3.0.9 or newer for SDI-out via DIGOUT module)
+  (requires firmware 4.3.0.7_3.0.9 or newer for SDI-out via onboard MCX connectors)
+- Added support for Fedora Core 13.
+
+
+Notes about version 4.0.0.0
+---------------------------
+- First beta SDK for Atomix.
+  (requires firmware 3.3.0.5_3.0.9 or newer for SDI-out via DIGOUT module)
+- Updated compiler for SDK creation on Linux (gcc-3.4.5 -> gcc-4.1.2).

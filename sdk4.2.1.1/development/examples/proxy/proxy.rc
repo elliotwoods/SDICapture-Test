@@ -1,0 +1,143 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROXY DIALOGEX 0, 0, 303, 154
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Proxy"
+MENU IDR_PROXY
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider2",IDC_SLIDERH,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,93,138,127,15
+    CONTROL         "Slider3",IDC_SLIDERV,"msctls_trackbar32",TBS_VERT | TBS_TOP | TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,284,19,18,107
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_PROXY MENUEX 
+BEGIN
+    POPUP "File",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Field",                       ID_FIELD,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Exit",                        ID_EXIT,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    END
+    MENUITEM "Pause",                       ID_PAUSE,MFT_STRING,MFS_ENABLED
+    POPUP "Zoom",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "1X",                          ID_ZOOM_1X,MFT_STRING,MFS_ENABLED
+        MENUITEM "2X",                          ID_ZOOM_2X,MFT_STRING,MFS_ENABLED
+        MENUITEM "4X",                          ID_ZOOM_4X,MFT_STRING,MFS_ENABLED
+        MENUITEM "8X",                          ID_ZOOM_8X,MFT_STRING,MFS_ENABLED
+        MENUITEM "16X",                         ID_ZOOM_16X,MFT_STRING,MFS_ENABLED
+        MENUITEM "32X",                         ID_ZOOM_32X,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Scale",                          65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "2:1",                         ID_SCALE_2_1,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:1",                         ID_SCALE_1_1,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:2",                         ID_SCALE_1_2,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:4",                         ID_SCALE_1_4,MFT_STRING,MFS_ENABLED
+        MENUITEM "1:8",                         ID_SCALE_1_8,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+    END
+    POPUP "Planes",                         65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Red",                         ID_PLANES_RED,MFT_STRING,MFS_ENABLED
+        MENUITEM "Green",                       ID_PLANES_GREEN,MFT_STRING,MFS_ENABLED
+        MENUITEM "Blue",                        ID_PLANES_BLUE,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Alpha",                       ID_PLANES_ALPHA,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Options",                        65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Clearbuffer",                 ID_OPTIONS_CLEARBUFFER,MFT_STRING,MFS_ENABLED
+        POPUP "ApiLevel",                       65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "default",                     ID_APILEVEL_DEFAULT,MFT_STRING,MFS_ENABLED
+            MENUITEM MFT_SEPARATOR
+            MENUITEM "1",                           ID_APILEVEL_1,MFT_STRING,MFS_ENABLED
+            MENUITEM "2",                           ID_APILEVEL_2,MFT_STRING,MFS_ENABLED
+            MENUITEM "3",                           ID_APILEVEL_3,MFT_STRING,MFS_ENABLED
+        END
+    END
+    POPUP "Analyzer",                       65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Disabled",                    ID_ANALYZER_DISABLED,MFT_STRING,MFS_ENABLED
+        MENUITEM "Histogram",                   ID_ANALYZER_HISTOGRAM,MFT_STRING,MFS_ENABLED
+        MENUITEM "RGB Parade",                  ID_ANALYZER_RGBPARADE,MFT_STRING,MFS_ENABLED
+        MENUITEM "A/V Delay",                   ID_ANALYZER_AVDELAY,MFT_STRING,MFS_ENABLED
+        MENUITEM "A/V Sync",                    ID_ANALYZER_AVSYNC,MFT_STRING,MFS_ENABLED
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
